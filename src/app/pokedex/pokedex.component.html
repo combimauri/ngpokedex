@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor="let pokemon of pokemon$ | async" class="col s12 m4">
+      <div class="card">
+        <div class="card-image">
+          <img [src]="pokemon.pictureUrl">
+          <span class="card-title black-text">#{{ pokemon.pokeNumber }} {{ pokemon.name }}</span>
+        </div>
+        <div class="card-action">
+          <a [routerLink]="['/pokemon', pokemon.id]">See More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="btn-floating btn-large waves-effect waves-light modal-trigger" href="#add-pokemon">
+    <i class="material-icons">add</i>
+  </a>
+</div>
+
+
+<div pokModal id="add-pokemon" class="modal">
+  <div class="modal-content">
+    <h4>Add Pokémon</h4>
+    <form #pokeform="ngForm">
+      <div class="row">
+        <div class="input-field col s12 m2">
+          <input id="pokenumber" name="pokenumber" type="number" [(ngModel)]="pokeNumber" class="validate" required>
+          <label for="pokenumber">Number</label>
+        </div>
+        <div class="input-field col s12 m10">
+          <input id="pokename" name="pokename" type="text" [(ngModel)]="pokeName" class="validate" required>
+          <label for="pokename">Name</label>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="modal-close waves-effect waves-light btn" [disabled]="pokeform.invalid"
+      (click)="savePokemon()">Add</button>
+  </div>
+</div>
