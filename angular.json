@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "ngpokedex": {
@@ -143,8 +143,16 @@
               "devServerTarget": "ngpokedex:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "ngpokedex"
+    }
+  },
+  "defaultProject": "ngpokedex",
+  "cli": {
+    "analytics": "e2b31c46-fc9c-4b1a-bc0e-91a754087300"
+  }
 }

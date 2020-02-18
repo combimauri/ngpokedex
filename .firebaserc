@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ngpokedex": {
+      "hosting": {
+        "ngpokedex": [
+          "ngpokedex"
+        ]
+      }
+    }
+  }
+}
